@@ -25,7 +25,10 @@ export const put = async (path, body) => {
 };
 
 export const post = async (path, body) => {
+  console.log("base", BASE_URL);
+  console.log("path", path);
   try {
+    console.log(`${BASE_URL}/${path}`);
     const response = await axios.post(`${BASE_URL}/${path}`, body);
     return response.data;
   } catch (error) {
