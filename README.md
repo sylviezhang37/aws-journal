@@ -1,4 +1,4 @@
-#### Use the notepad [here](https://main.drl5i35j4dmj0.amplifyapp.com/)!
+#### Use the journal app [here](https://main.drl5i35j4dmj0.amplifyapp.com/)!
 
 Technologies
 
