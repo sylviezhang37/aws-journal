@@ -1,44 +1,54 @@
 import React from "react";
-import {
-  Heading,
-  Grid,
-  Flex,
-  Text,
-  Image,
-  Button,
-} from "@aws-amplify/ui-react";
 import styles from "../styles";
+import { Button } from "@aws-amplify/ui-react";
 
-export default function CurrentNotes({ entries = [], handleDeleteEntry }) {
+const sampleEntry = [
+  {
+    id: 1,
+    title: "Sample Entry",
+    body: "This is a sample entry body.",
+  },
+];
+
+export default function CurrentNotes({
+  entries = sampleEntry,
+  handleDeleteEntry,
+}) {
   return (
-    <Flex className="CurrentNotes" style={styles.currentEntriesContainer}>
-      <Heading level={3}>All Entries</Heading>
-      <Grid style={styles.entryGrid}>
-        {Array.isArray(entries) && entries.length > 0 ? ( // Check if entries is an array
+    <div className="CurrentNotes" style={styles.currentEntriesContainer}>
+      <h3>All Entries</h3>
+      <div style={styles.entryGrid}>
+        {Array.isArray(entries) && entries.length > 0 ? (
           entries.map((entry) => (
-            <Flex
+            <div
               key={entry.id || entry.title}
               style={styles.entryBox}
               className="box"
             >
-              <Heading level={4}>{entry.title}</Heading>
-              <Text>{entry.body}</Text>
-              {/* {note.image && (
-                <Image
-                  src={note.image}
-                  alt={`visual aid for ${note.title}`}
+              <h4>{entry.title}</h4>
+              <p>{entry.body}</p>
+              {/* {entry.image && (
+                <img
+                  src={entry.image}
+                  alt={`visual aid for ${entry.title}`}
                   style={styles.imageAttachment}
                 />
               )} */}
-              <Button onClick={() => handleDeleteEntry(entry.id)}>
-                Delete
-              </Button>
-            </Flex>
+              <div style={styles.deleteButton}>
+                <Button
+                  size="small"
+                  onClick={() => handleDeleteEntry(entry.id)}
+                  style={styles.entryText}
+                >
+                  Delete
+                </Button>
+              </div>
+            </div>
           ))
         ) : (
-          <Text>No entries yet. Go back to add more!</Text>
+          <p>No entries yet. Go back to add more!</p>
         )}
-      </Grid>
-    </Flex>
+      </div>
+    </div>
   );
 }

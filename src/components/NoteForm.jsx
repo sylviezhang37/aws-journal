@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import {
-  Button,
-  TextField,
-  Flex,
-  View,
-  Image,
-} from "@aws-amplify/ui-react";
 import { Link } from "react-router-dom";
+import { Button } from "@aws-amplify/ui-react";
 import appLogo from "../assets/notepad.png";
 import styles from "../styles";
 
@@ -17,52 +11,66 @@ export default function NoteForm({
   signOut,
 }) {
   return (
-    <View className="App" style={styles.newEntryContainer}>
-      <Image src={appLogo} alt="AppLogo" style={styles.appLogo} />
-      <View as="form" margin="2rem" onSubmit={handleCreateEntry}>
-        <Flex style={styles.formContainer}>
-          <View
-            as="textarea"
+    <div className="App" style={styles.newEntryContainer}>
+      <img src={appLogo} alt="AppLogo" style={styles.appLogo} />
+      <form style={{ margin: "2rem" }} onSubmit={handleCreateEntry}>
+        <div style={{ ...styles.formContainer, gap: "1rem" }}>
+          <textarea
             name="title"
             placeholder="Title"
             required
             rows={1}
             style={styles.textArea}
           />
-          <View
-            as="textarea"
+          <textarea
             name="body"
             placeholder="..."
             rows={5}
             style={styles.textArea}
           />
 
-          {/* <View
+          {/* <input
             name="image"
-            as="input"
             type="file"
-            alignSelf={"end"}
             accept="image/png, image/jpeg"
             onChange={handleFileChange}
+            style={{ alignSelf: "end", marginBottom: "1rem" }}
           /> */}
 
-          {/* {fileName && <Text>Selected file: {fileName}</Text>} */}
+          {/* {fileName && <p style={{ marginBottom: "1rem" }}>Selected file: {fileName}</p>} */}
 
-          <Button type="submit" variation="primary" style={styles.fullWidthButton}>
-            Add Entry
-          </Button>
-
-          <Link to="/current-notes">
-            <Button variation="primary" style={styles.fullWidthButton}>
-              Existing Entries
+          <div style={styles.buttonsContainer}>
+            <Button
+              type="submit"
+              variation="primary"
+              size="small"
+              style={styles.fullWidthButton}
+            >
+              Add Entry
             </Button>
-          </Link>
 
-          <Button onClick={signOut} style={styles.signOutButton}>
-            Sign Out
-          </Button>
-        </Flex>
-      </View>
-    </View>
+            <Link to="/current-notes" style={{ width: "100%" }}>
+              <Button
+                type="button"
+                variation="primary"
+                size="small"
+                style={styles.fullWidthButton}
+              >
+                Existing Entries
+              </Button>
+            </Link>
+
+            <Button
+              type="button"
+              size="small"
+              onClick={signOut}
+              style={styles.fullWidthButton}
+            >
+              Sign Out
+            </Button>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 }
