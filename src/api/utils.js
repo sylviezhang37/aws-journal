@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = "https://tcmj4fgxbj.execute-api.us-east-1.amazonaws.com";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-export const get = async (path: string) => {
+export const get = async (path) => {
   try {
     const response = await axios.get(`${BASE_URL}/${path}`);
 
@@ -14,7 +14,7 @@ export const get = async (path: string) => {
   }
 };
 
-export const put = async (path: string, body: any) => {
+export const put = async (path, body) => {
   try {
     const response = await axios.put(`${BASE_URL}/${path}`, body);
     return response.data;
@@ -24,7 +24,7 @@ export const put = async (path: string, body: any) => {
   }
 };
 
-export const post = async (path: string, body: any) => {
+export const post = async (path, body) => {
   try {
     const response = await axios.post(`${BASE_URL}/${path}`, body);
     return response.data;
@@ -34,7 +34,7 @@ export const post = async (path: string, body: any) => {
   }
 };
 
-export const patch = async (path: string, body: any) => {
+export const patch = async (path, body) => {
   try {
     const response = await axios.patch(`${BASE_URL}/${path}`, body);
     return response.data;
@@ -44,7 +44,7 @@ export const patch = async (path: string, body: any) => {
   }
 };
 
-export const del = async (path: string) => {
+export const del = async (path) => {
   try {
     const response = await axios.delete(`${BASE_URL}/${path}`);
     return response.data;
@@ -57,9 +57,9 @@ export const del = async (path: string) => {
 const API = {
   get,
   put,
-  post, 
+  post,
   del,
-  patch
+  patch,
 };
 
 export default API;

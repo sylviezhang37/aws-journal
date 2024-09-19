@@ -101,7 +101,7 @@ export default function App() {
           path="/current-notes"
           element={
             <CurrentNotes
-              notes={entries}
+              entries={entries}
               handleDeleteEntry={handleDeleteEntry}
             />
           }
