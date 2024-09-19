@@ -1,8 +1,14 @@
-# React + Vite
+#### Use the notepad [here](https://main.drl5i35j4dmj0.amplifyapp.com/)!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Technologies
 
-Currently, two official plugins are available:
+	•	Backend: REST API built with AWS Lambda, API Gateway, and DynamoDB
+	•	Hosting: Deployed on AWS Amplify
+	•	Frontend: React with TypeScript and JavaScript
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
+
+	•	Secure user authentication
+	•	Data stored securely in the cloud
+
+![Screenshot 2024-09-16 at 10 09 33 PM](https://github.com/user-attachments/assets/e07dec90-4133-4195-a0bb-e39b9624899a)
