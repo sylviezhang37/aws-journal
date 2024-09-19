@@ -21,11 +21,10 @@ export default function NoteForm({
       <Image src={appLogo} alt="AppLogo" style={styles.appLogo} />
       <View as="form" margin="2rem" onSubmit={handleCreateEntry}>
         <Flex style={styles.formContainer}>
-          <TextField
+          <View
+            as="textarea"
             name="title"
             placeholder="Title"
-            label="Title"
-            labelHidden
             required
             rows={1}
             style={styles.textArea}
@@ -49,7 +48,7 @@ export default function NoteForm({
 
           {/* {fileName && <Text>Selected file: {fileName}</Text>} */}
 
-          <Button type="submit" variation="primary">
+          <Button type="submit" variation="primary" style={styles.fullWidthButton}>
             Add Entry
           </Button>
 

@@ -9,32 +9,30 @@ import {
 } from "@aws-amplify/ui-react";
 import styles from "../styles";
 
-export default function CurrentNotes({ notes, handleDeleteNote: handleDeleteEntry }) {
+export default function CurrentNotes({
+  notes,
+  handleDeleteEntry
+}) {
   return (
-    <Flex className="CurrentNotes" style={styles.currentNotesContainer}>
-      <Heading level={3}>Notes</Heading>
-      <Grid style={styles.noteGrid}>
+    <Flex className="CurrentNotes" style={styles.currentEntriesContainer}>
+      <Heading level={3}>All Entries</Heading>
+      <Grid style={styles.entryGrid}>
         {notes.map((note) => (
           <Flex
             key={note.id || note.title}
-            style={styles.noteBox}
+            style={styles.entryBox}
             className="box"
           >
-            <Heading level={3}>{note.title}</Heading>
-            <Text fontStyle="italic">{note.description}</Text>
-            {note.image && (
+            <Heading level={4}>{note.title}</Heading>
+            <Text>{note.body}</Text>
+            {/* {note.image && (
               <Image
                 src={note.image}
                 alt={`visual aid for ${note.title}`}
-                style={styles.noteImage}
+                style={styles.imageAttachment}
               />
-            )}
-            <Button
-              variation="destructive"
-              onClick={() => handleDeleteEntry(note.id)}
-            >
-              Delete note
-            </Button>
+            )} */}
+            <Button onClick={() => handleDeleteEntry(note.id)}>Delete</Button>
           </Flex>
         ))}
       </Grid>

@@ -49,8 +49,8 @@ export default function App() {
   }, []);
 
   async function fetchAndSetEntries() {
-    const notesData = await fetchEntries(userId);
-    setEntries(notesData);
+    const entriesData = await fetchEntries(userId);
+    setEntries(entriesData);
   }
 
   async function handleCreateEntry(event) {
@@ -102,7 +102,7 @@ export default function App() {
           element={
             <CurrentNotes
               notes={entries}
-              handleDeleteNote={handleDeleteEntry}
+              handleDeleteEntry={handleDeleteEntry}
             />
           }
         />

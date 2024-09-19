@@ -1,8 +1,9 @@
 const styles = {
   appLogo: {
-    width: 150,
-    justifyContent: "center",
-    alignItems: "center",
+    width: "100px",
+    height: "100px",
+    position: "relative",
+    // left: "-10%"
   },
   textArea: {
     width: "100%",
@@ -18,12 +19,12 @@ const styles = {
     flex: 1,
   },
   newEntryContainer: {
-    display: "flex",
-    flex: 1,
+    // display: "flex",
+    // flex: 1,
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    width: "80%",
+    width: "60%",
     margin: "0 auto",
     height: "100vh", // Ensure the container takes full height
   },
@@ -33,7 +34,7 @@ const styles = {
     gap: "2rem",
     padding: "1rem",
   },
-  currentNotesContainer: {
+  currentEntriesContainer: {
     justifyContent: "center",
     alignItems: "center",
     // set the flex direction to column instead of direction
@@ -41,14 +42,14 @@ const styles = {
     width: "70%",
     margin: "0 auto",
   },
-  noteGrid: {
+  entryGrid: {
     margin: "3rem 0",
     autoFlow: "column",
     justifyContent: "center",
     gap: "2rem",
     alignContent: "center",
   },
-  noteBox: {
+  entryBox: {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
@@ -57,7 +58,7 @@ const styles = {
     padding: "2rem",
     borderRadius: "5%",
   },
-  noteImage: {
+  imageAttachment: {
     width: 200,
   },
 };
